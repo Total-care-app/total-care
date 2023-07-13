@@ -162,8 +162,8 @@ const Layout = ({ children }) => {
   // sub list items / links
   const userMgtSublist = [
     { title: "User List", link: "/usermgt/userlist" },
-    { title: "Password Tracker", link: "#" },
-    { title: "Update User Table", link: "#" },
+    { title: "Password Tracker", link: "/usermgt/passwordtracker" },
+    { title: "Update User Table", link: "/usermgt/updateuserprofile" },
   ];
 
   return (
