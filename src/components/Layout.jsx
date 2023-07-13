@@ -36,6 +36,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { useRouter } from "next/router";
 import CollapsableList from "./sideNav/CollapsableList";
+import DashboardMain from "./Home/DashboardMain";
 
 const count = 76;
 const CasesCount = 99;
@@ -158,9 +159,9 @@ const Layout = ({ children }) => {
     setOpen(false);
   };
 
-  // sub list items
+  // sub list items / links
   const userMgtSublist = [
-    { title: "User List", link: "#" },
+    { title: "User List", link: "/usermgt/userlist" },
     { title: "Password Tracker", link: "#" },
     { title: "Update User Table", link: "#" },
   ];

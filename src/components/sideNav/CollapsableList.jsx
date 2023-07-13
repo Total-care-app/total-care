@@ -108,6 +108,7 @@ const CollapsableList = ({
             <Collapse in={openIndex === 1} timeout="auto" unmountOnExit>
               {subList.map((item) => (
                 <List
+                key={item.title}
                   component="div"
                   disablePadding
                   sx={{ bgcolor: "#009193" }}
