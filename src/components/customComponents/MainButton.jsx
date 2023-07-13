@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { colorWheel } from "@/constants/colors";
 
-const MainButton = ({ text, float }) => {
+const MainButton = ({ text, float,width }) => {
   return (
     <Button
       sx={{
@@ -12,6 +12,7 @@ const MainButton = ({ text, float }) => {
         p: "10px 25px",
         borderRadius: "20px",
         "&:hover": { bgcolor: colorWheel.secondary },
+        width: width
       }}
     >
       {text}

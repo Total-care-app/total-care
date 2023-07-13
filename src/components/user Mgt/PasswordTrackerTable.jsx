@@ -64,7 +64,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const UserListTable = () => {
+const PasswordTracker = () => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
 
@@ -110,17 +110,11 @@ const UserListTable = () => {
           width: "75vw",
         }}
       >
-        <Box sx={{ width: "75vw" }}>
-          <Typography sx={{ fontSize: "20px", fontWeight: 700, mb: "20px" }}>
-            User List
+        <Box sx={{ width: "75vw", }}>
+          <Typography sx={{ fontSize: "20px", fontWeight: 700, m: "20px" }}>
+            Password Tracker List
           </Typography>
 
-          <Stack direction="row" width="60%" spacing={2} marginBottom={"20px"}>
-            <CustomTextField placeholder="Enter start Date" />
-            <CustomTextField placeholder="Enter end Date" />
-            <MainButton width="400px" text="Submit" />
-          </Stack>
-          <Divider sx={{ m: "10px", width: "20px" }} />
           <Box
             sx={{
               display: "flex",
@@ -148,7 +142,7 @@ const UserListTable = () => {
           </Box>
         </Box>
 
-        <Box sx={{ display: "block", overflowX: "auto" }}>
+        <Box sx={{ display: "block", overflowX: "auto", ml:"30px" }}>
           <Table
             sx={{
               minWidth: 500,
@@ -165,21 +159,8 @@ const UserListTable = () => {
               <TableRow>
                 <StyledTableCell align="left">S.No</StyledTableCell>
                 <StyledTableCell align="left">User ID</StyledTableCell>
-                <StyledTableCell align="left">User Name</StyledTableCell>
-                <StyledTableCell align="left">Password</StyledTableCell>
                 <StyledTableCell align="left">Full Name</StyledTableCell>
-                <StyledTableCell align="left">Position</StyledTableCell>
-                <StyledTableCell align="left">User Type</StyledTableCell>
-                <StyledTableCell align="left">Package</StyledTableCell>
-                <StyledTableCell align="left">User Rank</StyledTableCell>
-                <StyledTableCell align="left">Sponsor ID</StyledTableCell>
-                <StyledTableCell align="left">Phone No.</StyledTableCell>
-                <StyledTableCell align="left">
-                  Registration Date
-                </StyledTableCell>
-                <StyledTableCell align="left">Activation Date</StyledTableCell>
-                <StyledTableCell align="left">Edit</StyledTableCell>
-                <StyledTableCell align="left">Action</StyledTableCell>
+                <StyledTableCell align="left">Password</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -205,82 +186,7 @@ const UserListTable = () => {
                       {value.nameOfComplainant}
                     </StyledTableCell>
 
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.nameOfComplainant}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.causeOfAction}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.quantumOfClaim}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      {value.assignedTo}
-                    </StyledTableCell>
-                    <StyledTableCell
-                      style={{ align: "left", textTransform: "capitalize" }}
-                    >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Chip label={value.stageOfDemand} size="small" />
-                        <ArrowForwardIosIcon
-                          sx={{
-                            color: "#000000",
-                            fontSize: "14px",
-                            "&:hover": {
-                              color: "#0A2240",
-                              cursor: "pointer",
-                              transform: "scale(1.4)",
-                              transitionDelay: "1s",
-                            },
-                          }}
-                        />
-                      </Box>
-                    </StyledTableCell>
+                   
                   </StyledTableRow>
                 ))}
             </TableBody>
@@ -306,4 +212,4 @@ const UserListTable = () => {
   );
 };
 
-export default UserListTable;
+export default PasswordTracker;
