@@ -165,6 +165,11 @@ const Layout = ({ children }) => {
     { title: "Password Tracker", link: "/usermgt/passwordtracker" },
     { title: "Update User Table", link: "/usermgt/updateuserprofile" },
   ];
+  const stockistmgtSubList = [
+    { title: "Managec Stockist Product", link: "/stockistmgt/franchiseproductlist" },
+    { title: "Stockist Requested Product", link: "#" },
+    { title: "Country Management", link: "#" },
+  ];
 
   return (
     <Box sx={{ display: "flex", margin: "2em 0.2em 0em 0.8em" }}>
@@ -324,7 +329,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={stockistmgtSubList}
               listIndex={1}
             />
             <CollapsableList
