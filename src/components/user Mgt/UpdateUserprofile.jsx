@@ -241,7 +241,7 @@ const UpdateUserprofile = () => {
                           display: "flex",
                           flexDirection: "row",
                           alignItems: "center",
-                          justifyContent: "space-between",
+                          justifyContent: "space-between"
                         }}
                       >
                         <Chip label={value.stageOfDemand} size="small" />
