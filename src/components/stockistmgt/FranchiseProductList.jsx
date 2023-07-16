@@ -97,7 +97,7 @@ const FranchiseProductList = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={6} md={3} sx={{ml:"20px", mt:'40px'}}>
       <TableContainer
         component={Paper}
         elevation={8}
@@ -110,7 +110,7 @@ const FranchiseProductList = () => {
           width: "75vw",
         }}
       >
-        <Box sx={{ width: "75vw", mt: "30px" }}>
+        <Box sx={{ width: "75vw", mt: "30px", }}>
           <Typography sx={{ fontSize: "20px", fontWeight: 700, m: "20px" }}>
             Franchise Product List
           </Typography>

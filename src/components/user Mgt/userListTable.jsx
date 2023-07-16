@@ -97,7 +97,7 @@ const UserListTable = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={6} md={3} sx={{mt:'50px'}}>
       <TableContainer
         component={Paper}
         elevation={8}
@@ -105,22 +105,25 @@ const UserListTable = () => {
           borderRadius: "0px",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-          pb: "10px",
+      
+         width: "75vw",
+         marginTop:"20px",
+         pt:'30px',
+         pl:'20px',
 
-          width: "75vw",
         }}
       >
-        <Box sx={{ width: "75vw" }}>
-          <Typography sx={{ fontSize: "20px", fontWeight: 700, mb: "20px" }}>
+        <Box>
+          <Typography sx={{ fontSize: "20px", fontWeight: 700, }}>
             User List
           </Typography>
 
-          <Stack direction="row" width="60%" spacing={2} marginBottom={"20px"}>
+          <Stack direction="row" width="60%" spacing={2} marginBottom={"20px"} marginTop={"20px"}>
             <CustomTextField placeholder="Enter start Date" />
             <CustomTextField placeholder="Enter end Date" />
             <MainButton width="400px" text="Submit" />
           </Stack>
-          <Divider sx={{ m: "10px", width: "20px" }} />
+         
           <Box
             sx={{
               display: "flex",
@@ -138,8 +141,9 @@ const UserListTable = () => {
                 flexDirection: "row",
                 width: "400px",
                 gap: 3,
-                mr: "30px",
-                mb: "20px",
+                pr:'50px',
+                marginBottom:"20px"
+              
               }}
             >
               <CustomTextField placeholder="Type to search" />

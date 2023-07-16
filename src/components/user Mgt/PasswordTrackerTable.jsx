@@ -97,7 +97,7 @@ const PasswordTracker = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={6} md={3} sx={{mt:'50px'}}>
       <TableContainer
         component={Paper}
         elevation={8}
@@ -105,12 +105,14 @@ const PasswordTracker = () => {
           borderRadius: "0px",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-          pb: "10px",
-
+            marginTop:"20px",
+         pt:'30px',
+         pl:'20px',
           width: "75vw",
+          ml:'20px'
         }}
       >
-        <Box sx={{ width: "75vw", }}>
+        <Box>
           <Typography sx={{ fontSize: "20px", fontWeight: 700, m: "20px" }}>
             Password Tracker List
           </Typography>

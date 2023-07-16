@@ -97,7 +97,7 @@ const UpdateUserprofile = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={6} md={3} sx={{mt:'50px'}}>
       <TableContainer
         component={Paper}
         elevation={8}
@@ -105,16 +105,18 @@ const UpdateUserprofile = () => {
           borderRadius: "0px",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-          pb: "10px",
-
+            marginTop:"20px",
+         pt:'30px',
+         pl:'20px',
+         ml:'20px',
           width: "75vw",
         }}
       >
-        <Box sx={{position:"relative", float: "right", mr: "30px", mt:'20px' }}>
+        <Box sx={{ float: "right", mr: "30px", mt:'20px',}}>
           <MainButton text="Export in Excell" />
         </Box>
-        <Box sx={{ width: "75vw", mt:'30px' }}>
-          <Typography sx={{ fontSize: "20px", fontWeight: 700, m: "20px" }}>
+        <Box >
+          <Typography sx={{ fontSize: "20px", fontWeight: 700,  }}>
             Registered User List
           </Typography>
 
@@ -125,6 +127,7 @@ const UpdateUserprofile = () => {
               alignContent: "right",
               alignItems: "right",
               justifyContent: "space-between",
+              mt:'50px'
             }}
           >
             <Box></Box>
