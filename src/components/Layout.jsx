@@ -193,7 +193,7 @@ const Layout = ({ children }) => {
     { title: "Member Package Report", link: "/reports-management/member-package-report" },
   ];
   const rank_achieversSublist = [
-    { title: "Rank Wise List", link: "#" },
+    { title: "Rank Wise List", link: "/rank-achievers/rank-wise-list" },
    
   ];
 
