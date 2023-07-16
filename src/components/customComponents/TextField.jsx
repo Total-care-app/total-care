@@ -9,7 +9,7 @@ export const CustomTextField = styled('input')(({theme})=>({
     height:'38px',
     fontsize:'12px',
     boxSizing: 'border-box',
-    borderRadius:'8px',
+    borderRadius:'5px',
     outline:'none',
     '&:hover':{
       border:'1.8px solid #000'

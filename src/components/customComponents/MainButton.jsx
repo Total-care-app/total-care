@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { colorWheel } from "@/constants/colors";
 
-const MainButton = ({ text, float,width }) => {
+const MainButton = ({ text,width }) => {
   return (
     <Button
       sx={{

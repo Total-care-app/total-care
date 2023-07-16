@@ -180,7 +180,7 @@ const Layout = ({ children }) => {
    
   ];
   const e_pins_manageSublist = [
-    { title: "Create E Pin", link: "#" },
+    { title: "Create E Pin", link: "/e-pins-manage/create-e-pin" },
     { title: "Fresh Pin Report", link: "#" },
     { title: "Used E Pin Report", link: "#" },
   ];
