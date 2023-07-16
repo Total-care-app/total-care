@@ -188,9 +188,9 @@ const Layout = ({ children }) => {
     
   ];
   const reports_managementSublist = [
-    { title: "Leadership Self Income", link: "#" },
-    { title: "Leadership Income", link: "#" },
-    { title: "Member Package Report", link: "#" },
+    { title: "Leadership Self Income", link: "/reports-management/leadership-self-income" },
+    { title: "Leadership Income", link: "/reports-management/leadership-income" },
+    { title: "Member Package Report", link: "/reports-management/member-package-report" },
   ];
   const rank_achieversSublist = [
     { title: "Rank Wise List", link: "#" },
