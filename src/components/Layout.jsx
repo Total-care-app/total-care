@@ -201,8 +201,8 @@ const Layout = ({ children }) => {
  
   ];
   const setting_mgtSublist = [
-    { title: "Change Password", link: "#" },
-    { title: "Change Profile Photo", link: "#" },
+    { title: "Change Password", link: "/settings-management/change-password" },
+    { title: "Change Profile Photo", link: "/settings-management/change-profile-photo" },
   
   ];
   const withdrawal_managementSublist = [
