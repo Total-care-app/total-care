@@ -172,7 +172,7 @@ const Layout = ({ children }) => {
   ];
   const stockist_fund_requestSublist = [
     { title: "Pending Fund Request", link: "/stockist_fund_request/pending_fund_request" },
-    { title: "Approved Fund Request", link: "#" },
+    { title: "Approved Fund Request", link: "/stockist_fund_request/approved-fund-request" },
     { title: "Cancel Fund Request", link: "#" },
   ];
   const stockist_wallet_managementSublist = [
