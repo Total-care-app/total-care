@@ -168,7 +168,70 @@ const Layout = ({ children }) => {
   const stockistmgtSubList = [
     { title: "Manage Stockist Product", link: "/stockistmgt/franchiseproductlist" },
     { title: "Stockist Requested Product", link: "/stockistmgt/stockist_requested_pdt" },
-    { title: "Country Management", link: "#" },
+    { title: "Country Management", link: "/stockistmgt/country_mgt" },
+  ];
+  const stockist_fund_requestSublist = [
+    { title: "Pending Fund Request", link: "/stockist_fund_request/pending_fund_request" },
+    { title: "Approved Fund Request", link: "#" },
+    { title: "Cancel Fund Request", link: "#" },
+  ];
+  const stockist_wallet_managementSublist = [
+    { title: "Manage Wallet", link: "#" },
+   
+  ];
+  const e_pins_manageSublist = [
+    { title: "Create E Pin", link: "#" },
+    { title: "Fresh Pin Report", link: "#" },
+    { title: "Used E Pin Report", link: "#" },
+  ];
+  const user_fund_request_managementSublist = [
+    
+  ];
+  const reports_managementSublist = [
+    { title: "Leadership Self Income", link: "#" },
+    { title: "Leadership Income", link: "#" },
+    { title: "Member Package Report", link: "#" },
+  ];
+  const rank_achieversSublist = [
+    { title: "Rank Wise List", link: "#" },
+   
+  ];
+
+  const e_wallet_mgtSublist = [
+ 
+  ];
+  const setting_mgtSublist = [
+    { title: "Change Password", link: "#" },
+    { title: "Change Profile Photo", link: "#" },
+  
+  ];
+  const withdrawal_managementSublist = [
+  
+  ];
+  const closing_managementSublist = [
+    { title: "Leadership Monthly Closing", link: "#" },
+  
+  ];
+  const query_ticket_managementSublist = [
+    
+  
+  ];
+  const order_managementSublist = [
+    { title: "New Order List", link: "#" },
+    { title: "Delivered Orders List", link: "#" },
+  
+  ];
+  const product_managementSublist = [
+ 
+  ];
+  const admin_bank_managementSublist = [
+ 
+  
+  ];
+  const policy_content_managementSublist = [
+    { title: "Change Password", link: "#" },
+    { title: "Change Profile Photo", link: "#" },
+    { title: "Policy Content Update", link: "#" },
   ];
 
   return (
@@ -338,7 +401,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={stockist_fund_requestSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -347,7 +410,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={stockist_wallet_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -356,7 +419,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={e_pins_manageSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -365,16 +428,16 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={user_fund_request_managementSublist}
               listIndex={1}
             />
             <CollapsableList
-            title="Reports"
+            title="Reports Management"
               tooltipText={"Reports"}
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={reports_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -383,7 +446,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={rank_achieversSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -392,7 +455,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={e_wallet_mgtSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -401,7 +464,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={setting_mgtSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -410,7 +473,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={withdrawal_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -419,7 +482,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={closing_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -428,7 +491,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={query_ticket_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -437,7 +500,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={order_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -446,7 +509,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={product_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -455,7 +518,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={admin_bank_managementSublist}
               listIndex={1}
             />
             <CollapsableList
@@ -464,7 +527,7 @@ const Layout = ({ children }) => {
               open={open}
               openDrawer={handleDrawerOpen}
               icon={<AssignmentIcon />}
-              subList={userMgtSublist}
+              subList={policy_content_managementSublist}
               listIndex={1}
             />
          
