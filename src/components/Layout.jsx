@@ -209,7 +209,7 @@ const Layout = ({ children }) => {
   
   ];
   const closing_managementSublist = [
-    { title: "Leadership Monthly Closing", link: "#" },
+    { title: "Leadership Monthly Closing", link: "/closing-management/leadership-monthly-closing" },
   
   ];
   const query_ticket_managementSublist = [
@@ -217,8 +217,8 @@ const Layout = ({ children }) => {
   
   ];
   const order_managementSublist = [
-    { title: "New Order List", link: "#" },
-    { title: "Delivered Orders List", link: "#" },
+    { title: "New Order List", link: "/order-management/new-order-list" },
+    { title: "Delivered Orders List", link: "/order-management/delivered-order-list" },
   
   ];
   const product_managementSublist = [
