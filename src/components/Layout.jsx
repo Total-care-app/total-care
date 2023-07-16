@@ -166,8 +166,8 @@ const Layout = ({ children }) => {
     { title: "Update User Table", link: "/usermgt/updateuserprofile" },
   ];
   const stockistmgtSubList = [
-    { title: "Managec Stockist Product", link: "/stockistmgt/franchiseproductlist" },
-    { title: "Stockist Requested Product", link: "#" },
+    { title: "Manage Stockist Product", link: "/stockistmgt/franchiseproductlist" },
+    { title: "Stockist Requested Product", link: "/stockistmgt/stockist_requested_pdt" },
     { title: "Country Management", link: "#" },
   ];
 
