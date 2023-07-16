@@ -182,7 +182,7 @@ const Layout = ({ children }) => {
   const e_pins_manageSublist = [
     { title: "Create E Pin", link: "/e-pins-manage/create-e-pin" },
     { title: "Fresh Pin Report", link: "/e-pins-manage/fresh-e-pin-report" },
-    { title: "Used E Pin Report", link: "#" },
+    { title: "Used E Pin Report", link: "/e-pins-manage/used-e-pin-report" },
   ];
   const user_fund_request_managementSublist = [
     
