@@ -64,7 +64,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const PendingFundRequest = () => {
+const CancelFundRequest = () => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
 
@@ -112,7 +112,7 @@ const PendingFundRequest = () => {
       >
         <Box sx={{ width: "75vw", mt: "30px", }}>
           <Typography sx={{ fontSize: "20px", fontWeight: 700, m: "20px" }}>
-            Stockist Fund Request
+            Stockist Cancel Fund Request
           </Typography>
 <Divider/>
           <Box
@@ -249,4 +249,4 @@ const PendingFundRequest = () => {
   );
 };
 
-export default PendingFundRequest;
+export default CancelFundRequest;
