@@ -9,7 +9,7 @@ import { CustomTextField } from "../customComponents/TextField";
 
 const UserList = () => {
   return (
-    <Box sx={{ p: "20px" }}>
+    <Box sx={{ p: "0px" }}>
       <Box sx={{ float: "right", mr: "30px" }}>
         <MainButton text="Export in Excell" />
       </Box>

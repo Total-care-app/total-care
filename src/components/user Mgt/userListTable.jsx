@@ -97,7 +97,7 @@ const UserListTable = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3} sx={{mt:'50px'}}>
+    <Grid item xs={6} md={3} sx={{mt:'50px', }}>
       <TableContainer
         component={Paper}
         elevation={8}

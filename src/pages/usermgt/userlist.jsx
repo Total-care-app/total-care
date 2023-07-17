@@ -8,7 +8,8 @@ const userlist = () => {
   return (
     <>
       <Layout>
-        <Box sx={{ ml: "-133px", mr: "-26px", mt: "-53px" }}>
+        {/* <Box sx={{ ml: "-133px", mr: "-26px", mt: "-53px" }}> */}
+        <Box sx={{ml:'-115px'}}>
           <DashboardMain />
           <UserList/>
         </Box>
