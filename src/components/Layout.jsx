@@ -229,9 +229,9 @@ const Layout = ({ children }) => {
   
   ];
   const policy_content_managementSublist = [
-    { title: "Change Password", link: "#" },
-    { title: "Change Profile Photo", link: "#" },
-    { title: "Policy Content Update", link: "#" },
+    { title: "Change Password", link: "/policy-content-management/change-password" },
+    { title: "Change Profile Photo", link: "/policy-content-management/change-profile-photo" },
+    { title: "Policy Content Update", link: "/policy-content-management/policy-content-update" },
   ];
 
   return (
