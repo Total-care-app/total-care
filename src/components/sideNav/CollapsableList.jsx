@@ -22,6 +22,8 @@ const CollapsableList = ({
   subList,
   tooltipText,
   title,
+  link,
+  showMore=true
 }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -32,7 +34,7 @@ const CollapsableList = ({
   return (
     <Box sx={{ mb: "18px" }}>
       <Tooltip title={!open ? tooltipText : ""} placement="right" arrow>
-        <Link style={{ textDecoration: "none" }} href={"#"}>
+        <Link style={{ textDecoration: "none" }} href={link ? link : ""}>
           <ListItem
             disablePadding
             sx={{
@@ -98,7 +100,7 @@ const CollapsableList = ({
                   }}
                   sx={{ mt: "10px", color: "#FFF" }}
                 >
-                  {openIndex === 1 ? <ExpandLess /> : <ExpandMore />}
+                  {showMore && (openIndex === 1 ? <ExpandLess /> : <ExpandMore />)}
                 </IconButton>
               )}
             </ListItemButton>
@@ -106,7 +108,7 @@ const CollapsableList = ({
 
           {open && (
             <Collapse in={openIndex === 1} timeout="auto" unmountOnExit>
-              {subList.map((item) => (
+              {subList && subList.map((item) => (
                 <List
                 key={item.title}
                   component="div"
