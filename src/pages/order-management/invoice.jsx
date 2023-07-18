@@ -1,4 +1,5 @@
 
+import Inovice from "@/components/Invoice/Inovice";
 import Layout from "@/components/Layout";
 import NewOrderList from "@/components/OrderManagement/NewOrderList";
 import { Box } from "@mui/material";
@@ -13,7 +14,7 @@ const new_order_list = () => {
       <Layout>
         <Box sx={{ ml: "-133px", mr: "-26px", mt: "-53px" }}>
        
-       <NewOrderList/>
+       <Inovice/>
           
         </Box>
       </Layout>
