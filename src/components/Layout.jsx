@@ -248,7 +248,7 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <Box sx={{ display: "flex", margin: "2em 0.2em 0em 0.8em" }}>
+    <Box sx={{ display: "flex",  }}>
       <CssBaseline />
       {/* Start Appbar */}
       <AppBar position="fixed" open={open}>

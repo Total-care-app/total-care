@@ -97,7 +97,20 @@ const UserListTable = () => {
     data && data.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <Grid item xs={6} md={3} sx={{mt:'50px', }}>
+    <Grid
+      item
+    //  this
+      sx={{
+        mt: "50px",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+      }}
+    >
+      {/* this */}
+      <Box sx={{display:"flex", justifyContent:'right' }}>
+        <MainButton float="right" text="Export in Excell" />
+      </Box>
       <TableContainer
         component={Paper}
         elevation={8}
@@ -105,25 +118,31 @@ const UserListTable = () => {
           borderRadius: "0px",
           boxShadow:
             "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
-      
-         width: "75vw",
-         marginTop:"20px",
-         pt:'30px',
-         pl:'20px',
-
+          bgcolor: "#dedede",
+          ml:'10px',
+       flex:1,
+          marginTop: "20px",
+          pt: "30px",
+          pl: "20px",
         }}
       >
         <Box>
-          <Typography sx={{ fontSize: "20px", fontWeight: 700, }}>
+          <Typography sx={{ fontSize: "20px", fontWeight: 700 }}>
             User List
           </Typography>
 
-          <Stack direction="row" width="60%" spacing={2} marginBottom={"20px"} marginTop={"20px"}>
+          <Stack
+            direction="row"
+            width="60%"
+            spacing={2}
+            marginBottom={"20px"}
+            marginTop={"20px"}
+          >
             <CustomTextField placeholder="Enter start Date" />
             <CustomTextField placeholder="Enter end Date" />
             <MainButton width="400px" text="Submit" />
           </Stack>
-         
+
           <Box
             sx={{
               display: "flex",
@@ -141,9 +160,8 @@ const UserListTable = () => {
                 flexDirection: "row",
                 width: "400px",
                 gap: 3,
-                pr:'50px',
-                marginBottom:"20px"
-              
+                pr: "50px",
+                marginBottom: "20px",
               }}
             >
               <CustomTextField placeholder="Type to search" />
@@ -155,7 +173,9 @@ const UserListTable = () => {
         <Box sx={{ display: "block", overflowX: "auto" }}>
           <Table
             sx={{
-              minWidth: 500,
+              minWidth: 900,
+              tableLayout: "fixed",
+             
             }}
             aria-label="customized table"
           >
