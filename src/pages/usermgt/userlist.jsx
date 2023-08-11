@@ -9,7 +9,7 @@ const userlist = () => {
     <>
       <Layout width="100%">
         <Box sx={{ ml: "-120px" }}>
-          <DashboardMain />
+          
           <UserListTable />
         </Box>
       </Layout>

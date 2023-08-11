@@ -22,7 +22,26 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRouter } from "next/router";
 import CollapsableList from "./sideNav/CollapsableList";
-import { AccountBalance, AccountBalanceWallet, CloseFullscreen, CreditCard, CurrencyExchange, FiberPin, GroupAdd, GroupAddOutlined, MenuBook, MilitaryTech, Paid, Policy, ReceiptLong, Savings, Settings, ShoppingBasket, ShoppingCart, Verified } from "@mui/icons-material";
+import {
+  AccountBalance,
+  AccountBalanceWallet,
+  CloseFullscreen,
+  CreditCard,
+  CurrencyExchange,
+  FiberPin,
+  GroupAdd,
+  GroupAddOutlined,
+  MenuBook,
+  MilitaryTech,
+  Paid,
+  Policy,
+  ReceiptLong,
+  Savings,
+  Settings,
+  ShoppingBasket,
+  ShoppingCart,
+  Verified,
+} from "@mui/icons-material";
 
 const count = 76;
 const CasesCount = 99;
@@ -148,9 +167,9 @@ const Layout = ({ children }) => {
   // sub list items / links
   const dashboard = [];
   const userMgtSublist = [
-    { title: "User List", link: "/usermgt/userlist" },
-    { title: "Password Tracker", link: "/usermgt/passwordtracker" },
-    { title: "Update User Table", link: "/usermgt/updateuserprofile" },
+    { title: "Users", link: "/usermgt/userlist" },
+    // { title: "Password Tracker", link: "/usermgt/passwordtracker" },
+    // { title: "Update User Table", link: "/usermgt/updateuserprofile" },
   ];
   const stockistmgtSubList = [
     {
@@ -248,7 +267,7 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <Box sx={{ display: "flex",  }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       {/* Start Appbar */}
       <AppBar position="fixed" open={open}>
@@ -387,6 +406,7 @@ const Layout = ({ children }) => {
           <List
             sx={{
               backgroundColor: "#014d4e",
+              height:'100%'
             }}
           >
             {/* side nav */}
@@ -398,8 +418,8 @@ const Layout = ({ children }) => {
               openDrawer={handleDrawerOpen}
               icon={<HomeIcon />}
               listIndex={1}
-             link="/"
-             showMore={false}
+              link="/"
+              showMore={false}
             />
             <CollapsableList
               title="User Management"
@@ -410,6 +430,7 @@ const Layout = ({ children }) => {
               subList={userMgtSublist}
               listIndex={1}
             />
+            {/*             
             <CollapsableList
               title="Stockist Management"
               tooltipText={"Stockist Management"}
@@ -553,7 +574,7 @@ const Layout = ({ children }) => {
               icon={<Policy/>}
               subList={policy_content_managementSublist}
               listIndex={1}
-            />
+            /> */}
 
             {/* side nav */}
           </List>
