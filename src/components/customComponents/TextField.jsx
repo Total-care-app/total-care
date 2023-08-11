@@ -6,7 +6,7 @@ export const CustomTextField = styled('input')(({theme})=>({
     padding:'10px 15px',
     alignItems:'left',
     width:'100%',
-    height:'38px',
+    height:'42px',
     fontsize:'12px',
     boxSizing: 'border-box',
     borderRadius:'5px',
@@ -15,7 +15,7 @@ export const CustomTextField = styled('input')(({theme})=>({
       border:'1.8px solid #000'
     },
     '&:focus':{
-      border:'2px solid #000 !important',
+      border:'2px solid gray !important',
       outline:'none'
     }
   
