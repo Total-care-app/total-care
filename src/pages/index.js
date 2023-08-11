@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Box>
         <Layout>
-          <Box sx={{ ml: "-133px", mr: "-26px", mt: "-53px" }}>
+          <Box sx={{ ml: "-133px", mr: "-26px", mt: "20px" }}>
             <DashboardMain />
           </Box>
         </Layout>
