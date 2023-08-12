@@ -241,7 +241,7 @@ const UserListTable = () => {
             <TableBody>
               {data?.map((user) => (
                 <StyledTableRow
-
+key={user.id}
                 // onClick={() => {
                 //   router.push(`demandDetails/${value.demandId.slice(2)}`);
                 // }}
@@ -279,7 +279,7 @@ const UserListTable = () => {
                       sx={{
                         textTransform:'lowercase',
                         bgcolor:
-                          user.registrationStatus == "FULLY REGISTERED" ? "#009b7d " : "orange",
+                          user.registrationStatus == "FULLY REGISTERED" ? "#a3c1ad  " : "#ffcc99 ",
                       }}
                     />
                   </StyledTableCell>
