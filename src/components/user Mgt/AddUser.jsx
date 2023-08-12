@@ -56,19 +56,20 @@ const router = useRouter();
     >
       <Item style={{ padding: "20px" }}>
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Typography
               sx={{
                 fontSize: "13px",
                 fontWeight: "700",
                 mt: "20px",
                 color: "#000",
+                textAlign:'center'
               }}
             >
               Register a new user
             </Typography>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={12} lg={9}>
             <Item style={{ padding: "20px" }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} lg={6}>

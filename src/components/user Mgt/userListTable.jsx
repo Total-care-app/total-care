@@ -125,7 +125,7 @@ const UserListTable = () => {
   const { data, error } = useSWR("/v1/users", fetcher);
 
   console.log("data", data);
-  if (error) showToastMessage("Data fetch is taking longer, Re-try", "info");
+  if (error) console.log("Data fetch error, Re-try", error);
   return (
     <Grid
       item
