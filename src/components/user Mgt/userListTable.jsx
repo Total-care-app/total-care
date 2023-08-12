@@ -231,7 +231,6 @@ const UserListTable = () => {
                 <StyledTableCell align="left">First Name</StyledTableCell>
                 <StyledTableCell align="left">Last Name</StyledTableCell>
                 <StyledTableCell align="left">Email</StyledTableCell>
-                <StyledTableCell align="left"> Recovery Email</StyledTableCell>
                 <StyledTableCell align="left">Role</StyledTableCell>
                 <StyledTableCell align="left">
                   Registration Status
@@ -241,10 +240,10 @@ const UserListTable = () => {
             <TableBody>
               {data?.map((user) => (
                 <StyledTableRow
-key={user.id}
-                // onClick={() => {
-                //   router.push(`demandDetails/${value.demandId.slice(2)}`);
-                // }}
+                  key={user.id}
+                  // onClick={() => {
+                  //   router.push(`demandDetails/${value.demandId.slice(2)}`);
+                  // }}
                 >
                   <StyledTableCell scope="row">
                     <Typography sx={{ fontSize: "12px", ml: "10px" }}>
@@ -261,11 +260,7 @@ key={user.id}
                   >
                     {user.email}
                   </StyledTableCell>
-                  <StyledTableCell
-                    style={{ align: "left", textTransform: "capitalize" }}
-                  >
-                    {user.recoveryEmail}
-                  </StyledTableCell>
+
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
@@ -277,9 +272,11 @@ key={user.id}
                     <Chip
                       label={user.registrationStatus}
                       sx={{
-                        textTransform:'lowercase',
+                        textTransform: "lowercase",
                         bgcolor:
-                          user.registrationStatus == "FULLY REGISTERED" ? "#a3c1ad  " : "#ffcc99 ",
+                          user.registrationStatus == "FULLY REGISTERED"
+                            ? "#a3c1ad  "
+                            : "#ffcc99 ",
                       }}
                     />
                   </StyledTableCell>

@@ -21,6 +21,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRouter } from "next/router";
 import CollapsableList from "./sideNav/CollapsableList";
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import {
   GroupAdd,
 } from "@mui/icons-material";
@@ -150,8 +151,14 @@ const Layout = ({ children }) => {
   const dashboard = [];
   const userMgtSublist = [
     { title: "Users", link: "/usermgt/userlist" },
+  ]
+  const myProfile = [
+    { title: "User Profile", link: "/my-profile/user-profile" },
+    { title: "Client/Stockist Profile", link: "/my-profile/client-profile" },
+   
    
   ];
+
   
 
   return (
@@ -316,6 +323,16 @@ const Layout = ({ children }) => {
               openDrawer={handleDrawerOpen}
               icon={<GroupAdd />}
               subList={userMgtSublist}
+              listIndex={1}
+            />
+            
+            <CollapsableList
+              title="My Profile"
+              tooltipText={"User Management"}
+              open={open}
+              openDrawer={handleDrawerOpen}
+              icon={<AssignmentIndIcon />}
+              subList={myProfile}
               listIndex={1}
             />
            
