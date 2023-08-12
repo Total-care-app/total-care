@@ -43,8 +43,9 @@ export const Item = styled(Paper)(({ theme }) => ({
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    color: theme.palette.common.white,
-    backgroundColor: "#0A2240",
+    color: "#000",
+    backgroundColor: "#DCDCDC",
+    fontWeight:'600'
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: "12px",
@@ -53,9 +54,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: "#FFF",
     "&:hover": {
-      backgroundColor: "#dedede",
+      backgroundColor: "#F8F9F5",
     },
   },
   "&:nth-of-type(even)": {
@@ -66,7 +67,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const UserListTable = () => {
-  const dummyData1 = [];
+ 
 
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5); // default page size is 5
@@ -117,9 +118,7 @@ const UserListTable = () => {
   // set table length into rtk
 
 
-  // fetch  demands
-  const demandsurl = `/demand`;
-  const closedDemandsUrl = `/demand/closeDemand`;
+
 
   // paginate
   // const currentPageData =
@@ -148,6 +147,7 @@ const UserListTable = () => {
             mt: "-20px",
             boxShadow:
               "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px",
+              
           }}
         >
           <Typography
@@ -172,6 +172,7 @@ const UserListTable = () => {
                 height: "35px",
                 boxShadow: "none",
                 border: "1.5px solid #AAB5C0",
+                
               }}
             >
               <IconButton
@@ -210,7 +211,7 @@ const UserListTable = () => {
            
             <Button
               onClick={() => {
-                router.push("/addDemand").then((r) => true);
+                router.push("/usermgt/add-new-user").then((r) => true);
               }}
               sx={{
                 display: "flex",
@@ -242,9 +243,10 @@ const UserListTable = () => {
             boxShadow:
               "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
             pb: "10px",
+            
           }}
         >
-          <Table sx={{ minWidth: 800 }} aria-label="customized table">
+          <Table sx={{ minWidth: 800,  }} aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell align="left">User ID</StyledTableCell>
