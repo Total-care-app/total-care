@@ -692,226 +692,226 @@ const ClientProfile = () => {
 
           <CustomDivider />
 
-{/* Next of kin details */}
-<Grid item xs={12}>
-  <Typography
-    sx={{ textAlign: "left", fontSize: "18px", fontWeight: "600px" }}
-  >
-    Next of Kin Details
-  </Typography>
-</Grid>
+          {/* Next of kin details */}
+          <Grid item xs={12}>
+            <Typography
+              sx={{ textAlign: "left", fontSize: "18px", fontWeight: "600px" }}
+            >
+              Next of Kin Details
+            </Typography>
+          </Grid>
 
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-      Client Profile ID:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        2323
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Client Profile ID:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  2323
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
 
-{/* name */}
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-     Name:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        Sudo Pason
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
+          {/* name */}
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Name:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  Sudo Pason
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
 
-{/* r/ship */}
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-      Relationship:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        Mother
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-     Proof of Relationship:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        NIN
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
+          {/* r/ship */}
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Relationship:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  Mother
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Proof of Relationship:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  NIN
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
 
-{/* d-o-b */}
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-      Date of Birth:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        23/20233/ 23
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-     Phone number:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        078544737373
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
+          {/* d-o-b */}
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Date of Birth:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  23/20233/ 23
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Phone number:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  078544737373
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
 
-{/* blocked */}
-<Grid item xs={12} lg={6}>
-  <Box
-    sx={{
-      display: "flex",
-      justifyContent: editMode ? "space-between" : "flex-start",
-      alignItems: "center",
-    }}
-  >
-    <Typography
-      sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
-    >
-      Blocked:
-    </Typography>
-    {!editMode ? (
-      <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
-        2323
-      </Typography>
-    ) : (
-      <CustomTextField
-        sx={{
-          width: "65%",
-          display: "flex",
-          justifyContent: editMode ? "space-between" : "flex-start",
-          position: "relative",
-        }}
-      />
-    )}
-  </Box>
-</Grid>
+          {/* blocked */}
+          <Grid item xs={12} lg={6}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: editMode ? "space-between" : "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", fontWeight: 600, mr: "20px" }}
+              >
+                Blocked:
+              </Typography>
+              {!editMode ? (
+                <Typography sx={{ fontSize: "12px", fontWeight: 600 }}>
+                  2323
+                </Typography>
+              ) : (
+                <CustomTextField
+                  sx={{
+                    width: "65%",
+                    display: "flex",
+                    justifyContent: editMode ? "space-between" : "flex-start",
+                    position: "relative",
+                  }}
+                />
+              )}
+            </Box>
+          </Grid>
           {editMode && (
             <Grid
               item
