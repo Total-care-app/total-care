@@ -16,31 +16,13 @@ import MuiAppBar from "@mui/material/AppBar";
 import HomeIcon from "@mui/icons-material/Home";
 import List from "@mui/material/List";
 import LogoutIcon from "@mui/icons-material/Logout";
-import AssignmentIcon from "@mui/icons-material/Assignment";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRouter } from "next/router";
 import CollapsableList from "./sideNav/CollapsableList";
 import {
-  AccountBalance,
-  AccountBalanceWallet,
-  CloseFullscreen,
-  CreditCard,
-  CurrencyExchange,
-  FiberPin,
   GroupAdd,
-  GroupAddOutlined,
-  MenuBook,
-  MilitaryTech,
-  Paid,
-  Policy,
-  ReceiptLong,
-  Savings,
-  Settings,
-  ShoppingBasket,
-  ShoppingCart,
-  Verified,
 } from "@mui/icons-material";
 
 const count = 76;
@@ -168,103 +150,9 @@ const Layout = ({ children }) => {
   const dashboard = [];
   const userMgtSublist = [
     { title: "Users", link: "/usermgt/userlist" },
-    // { title: "Password Tracker", link: "/usermgt/passwordtracker" },
-    // { title: "Update User Table", link: "/usermgt/updateuserprofile" },
+   
   ];
-  const stockistmgtSubList = [
-    {
-      title: "Manage Stockist Product",
-      link: "/stockistmgt/franchiseproductlist",
-    },
-    {
-      title: "Stockist Requested Product",
-      link: "/stockistmgt/stockist_requested_pdt",
-    },
-    { title: "Country Management", link: "/stockistmgt/country_mgt" },
-  ];
-  const stockist_fund_requestSublist = [
-    {
-      title: "Pending Fund Request",
-      link: "/stockist_fund_request/pending_fund_request",
-    },
-    {
-      title: "Approved Fund Request",
-      link: "/stockist_fund_request/approved-fund-request",
-    },
-    {
-      title: "Cancel Fund Request",
-      link: "/stockist_fund_request/cancel-fund-request",
-    },
-  ];
-  const stockist_wallet_managementSublist = [
-    {
-      title: "Manage Wallet",
-      link: "/stockist-wallet-management/manage-wallet",
-    },
-  ];
-  const e_pins_manageSublist = [
-    { title: "Create E Pin", link: "/e-pins-manage/create-e-pin" },
-    { title: "Fresh Pin Report", link: "/e-pins-manage/fresh-e-pin-report" },
-    { title: "Used E Pin Report", link: "/e-pins-manage/used-e-pin-report" },
-  ];
-  const user_fund_request_managementSublist = [];
-  const reports_managementSublist = [
-    {
-      title: "Leadership Self Income",
-      link: "/reports-management/leadership-self-income",
-    },
-    {
-      title: "Leadership Income",
-      link: "/reports-management/leadership-income",
-    },
-    {
-      title: "Member Package Report",
-      link: "/reports-management/member-package-report",
-    },
-  ];
-  const rank_achieversSublist = [
-    { title: "Rank Wise List", link: "/rank-achievers/rank-wise-list" },
-  ];
-
-  const e_wallet_mgtSublist = [];
-  const setting_mgtSublist = [
-    { title: "Change Password", link: "/settings-management/change-password" },
-    {
-      title: "Change Profile Photo",
-      link: "/settings-management/change-profile-photo",
-    },
-  ];
-  const withdrawal_managementSublist = [];
-  const closing_managementSublist = [
-    {
-      title: "Leadership Monthly Closing",
-      link: "/closing-management/leadership-monthly-closing",
-    },
-  ];
-  const query_ticket_managementSublist = [];
-  const order_managementSublist = [
-    { title: "New Order List", link: "/order-management/new-order-list" },
-    {
-      title: "Delivered Orders List",
-      link: "/order-management/delivered-order-list",
-    },
-  ];
-  const product_managementSublist = [];
-  const admin_bank_managementSublist = [];
-  const policy_content_managementSublist = [
-    {
-      title: "Change Password",
-      link: "/policy-content-management/change-password",
-    },
-    {
-      title: "Change Profile Photo",
-      link: "/policy-content-management/change-profile-photo",
-    },
-    {
-      title: "Policy Content Update",
-      link: "/policy-content-management/policy-content-update",
-    },
-  ];
+  
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -430,153 +318,7 @@ const Layout = ({ children }) => {
               subList={userMgtSublist}
               listIndex={1}
             />
-            {/*             
-            <CollapsableList
-              title="Stockist Management"
-              tooltipText={"Stockist Management"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<ShoppingBasket/>}
-              subList={stockistmgtSubList}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Stockist Fund Request"
-              tooltipText={"Stockist Fund Request"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<CurrencyExchange/>}
-              subList={stockist_fund_requestSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Stockist Wallet"
-              tooltipText={"Stockist Wallet"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<AccountBalanceWallet/>}
-              subList={stockist_wallet_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="E pins"
-              tooltipText={"E pins"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<FiberPin />}
-              subList={e_pins_manageSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="User Fund Request"
-              tooltipText={"User Fund Request"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<Savings />}
-              subList={user_fund_request_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Reports Management"
-              tooltipText={"Reports"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<MenuBook />}
-              subList={reports_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Rank Achievers"
-              tooltipText={"Rank Achievers"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<MilitaryTech />}
-              subList={rank_achieversSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="E-wallet"
-              tooltipText={"E-wallet"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<Paid />}
-              subList={e_wallet_mgtSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Settings"
-              tooltipText={"Settings"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<Settings />}
-              subList={setting_mgtSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Withdrawals"
-              tooltipText={"Withdrawals"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<CreditCard />}
-              subList={withdrawal_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Closing Mgt"
-              tooltipText={"Closing Mgt"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<CloseFullscreen />}
-              subList={closing_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Query Tickets"
-              tooltipText={"WQuery Tickets"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<Verified />}
-              subList={query_ticket_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Order Mgt"
-              tooltipText={"Order Mgt"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<ShoppingCart />}
-              subList={order_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Product Mgt"
-              tooltipText={"Product Mgt"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<ReceiptLong />}
-              subList={product_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Admin Bank Mgt"
-              tooltipText={"Admin Bank Mgt"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<AccountBalance />}
-              subList={admin_bank_managementSublist}
-              listIndex={1}
-            />
-            <CollapsableList
-              title="Policy Content"
-              tooltipText={"Policy Content"}
-              open={open}
-              openDrawer={handleDrawerOpen}
-              icon={<Policy/>}
-              subList={policy_content_managementSublist}
-              listIndex={1}
-            /> */}
-
-            {/* side nav */}
+           
           </List>
         </Drawer>
         <Box

@@ -1,10 +1,41 @@
+"use client";
+import { useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { CustomTextField } from "../customComponents/TextField";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import http from "@/config/http";
 
 const Login = () => {
   const router = useRouter();
+
+  const [loginField, setLoginField] = useState({
+    email: "",
+    password: "",
+  });
+
+  console.log("Form", loginField);
+
+  const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+    setLoginField((prevProps) => ({
+      ...prevProps,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async () => {
+    await http
+      .post("/login", loginField)
+      .then((res) => {
+        console.log("Login successfull", res);
+        router.push('/')
+      })
+      .catch((error) => {
+        console.log("login error", error);
+      });
+  };
+
   return (
     <Box
       sx={{
@@ -45,16 +76,26 @@ const Login = () => {
           </Typography>
         </Box>
 
-        <Box sx={{width:'100%',}}>
-          <CustomTextField type="text" placeholder="User name" sx={{mb:'25px'}} />
-          <CustomTextField type="password" placeholder="Password" />
+        <Box sx={{ width: "100%" }}>
+          <CustomTextField
+            type="text"
+            placeholder="User name"
+            name="email"
+            onChange={handleLoginChange}
+            sx={{ mb: "25px" }}
+          />
+          <CustomTextField
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleLoginChange}
+          />
         </Box>
 
         <Box>
           <Button
-            onClick={() => {
-              router.push("/");
-            }}
+            type="submit"
+            onClick={onSubmit}
             sx={{
               bgcolor: "#014d4e",
               textTransform: "Capitalize",
