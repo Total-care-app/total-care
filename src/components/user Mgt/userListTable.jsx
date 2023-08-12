@@ -10,10 +10,9 @@ import TableRow from "@mui/material/TableRow";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import AddIcon from "@mui/icons-material/Add";
+import useSWR from "swr";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-
 
 import {
   Box,
@@ -32,6 +31,8 @@ import {
 } from "@mui/material";
 
 import { useRouter } from "next/router";
+import CustomButton from "../customComponents/CustomButton";
+import http from "@/config/http";
 
 export const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -45,7 +46,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     color: "#000",
     backgroundColor: "#DCDCDC",
-    fontWeight:'600'
+    fontWeight: "600",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: "12px",
@@ -67,8 +68,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const UserListTable = () => {
- 
-
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5); // default page size is 5
 
@@ -117,13 +116,16 @@ const UserListTable = () => {
 
   // set table length into rtk
 
-
-
-
   // paginate
   // const currentPageData =
   //   data && data.slice((page - 1) * pageSize, page * pageSize);
 
+  // fetch user data
+  const fetcher = async (url) => await http.get(url).then((res) => res.data);
+  const { data, error } = useSWR("/v1/users", fetcher);
+
+  console.log("data", data);
+  if (error) showToastMessage("Data fetch is taking longer, Re-try", "info");
   return (
     <Grid
       item
@@ -132,7 +134,7 @@ const UserListTable = () => {
       sx={{
         ml: `${20}px`,
         mr: "0px",
-        mt:'50px'
+        mt: "50px",
       }}
     >
       <Box>
@@ -147,7 +149,6 @@ const UserListTable = () => {
             mt: "-20px",
             boxShadow:
               "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px",
-              
           }}
         >
           <Typography
@@ -159,7 +160,7 @@ const UserListTable = () => {
               lineHeight: "14px",
             }}
           >
-            USers
+            Users
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Paper
@@ -172,7 +173,6 @@ const UserListTable = () => {
                 height: "35px",
                 boxShadow: "none",
                 border: "1.5px solid #AAB5C0",
-                
               }}
             >
               <IconButton
@@ -207,33 +207,13 @@ const UserListTable = () => {
                 </IconButton>
               )}
             </Paper>
-           
-           
-            <Button
+
+            <CustomButton
+              title="Add User"
               onClick={() => {
                 router.push("/usermgt/add-new-user").then((r) => true);
               }}
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                color: "#FFFFFF",
-                background: "linear-gradient(180deg, #FF681D 0%, #AA0050 100%)",
-                ml: "10px",
-                height: "35px",
-                textTransform: "capitalize",
-                "&:hover": {
-                  background:
-                    "linear-gradient(-120deg, #FF681D 0%, #AA0050 100%)",
-                  transition: "0.5s ease-in",
-                },
-                "&:focus": {
-                  border: "none !important",
-                },
-              }}
-              startIcon={<AddIcon />}
-            >
-              New User
-            </Button>
+            />
           </Box>
         </Box>
         <TableContainer
@@ -243,25 +223,23 @@ const UserListTable = () => {
             boxShadow:
               "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
             pb: "10px",
-            
           }}
         >
-          <Table sx={{ minWidth: 800,  }} aria-label="customized table">
+          <Table sx={{ minWidth: 800 }} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell align="left">User ID</StyledTableCell>
-                <StyledTableCell align="left">User Name</StyledTableCell>
-                <StyledTableCell align="left">
-                  Phone Number
-                </StyledTableCell>
+                <StyledTableCell align="left">First Name</StyledTableCell>
+                <StyledTableCell align="left">Last Name</StyledTableCell>
                 <StyledTableCell align="left">Email</StyledTableCell>
-                <StyledTableCell align="left">Password</StyledTableCell>
-                <StyledTableCell align="left">Permissions</StyledTableCell>
-                
+                <StyledTableCell align="left"> Recovery Email</StyledTableCell>
+                <StyledTableCell align="left">Role</StyledTableCell>
+                <StyledTableCell align="left">
+                  Registration Status
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {
+              {data?.map((user) => (
                 <StyledTableRow
 
                 // onClick={() => {
@@ -269,40 +247,44 @@ const UserListTable = () => {
                 // }}
                 >
                   <StyledTableCell scope="row">
-                    
-                      <Typography sx={{ fontSize: "12px", ml: "10px" }}>
-                        {34343}
-                      </Typography>
-                    
+                    <Typography sx={{ fontSize: "12px", ml: "10px" }}>
+                      {user.firstName}
+                    </Typography>
                   </StyledTableCell>
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
-                    Hello World
+                    {user.lastName}
                   </StyledTableCell>
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
-                   Hello World
+                    {user.email}
                   </StyledTableCell>
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
-                  Hello World
+                    {user.recoveryEmail}
                   </StyledTableCell>
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
-                  Hello World
+                    {user.role}
                   </StyledTableCell>
                   <StyledTableCell
                     style={{ align: "left", textTransform: "capitalize" }}
                   >
-                  Hello World
+                    <Chip
+                      label={user.registrationStatus}
+                      sx={{
+                        textTransform:'lowercase',
+                        bgcolor:
+                          user.registrationStatus == "FULLY REGISTERED" ? "#009b7d " : "orange",
+                      }}
+                    />
                   </StyledTableCell>
-                  
                 </StyledTableRow>
-              }
+              ))}
             </TableBody>
           </Table>
           {/* <Box sx={{ position: "relative", p: "0px 20px" }}>

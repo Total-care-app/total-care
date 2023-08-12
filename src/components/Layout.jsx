@@ -223,7 +223,7 @@ const Layout = ({ children }) => {
                 alignItems: "center",
               }}
             >
-              <Typography color="primary">VTC Admin</Typography>
+              <Typography color="primary">Admin</Typography>
               <IconButton
                 aria-controls={openAvata ? "avata-menu" : undefined}
                 aria-haspopup="true"

@@ -1,10 +1,48 @@
 "use client";
-import { Grid, Typography } from "@mui/material";
-import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { Item } from "./userListTable";
 import { CustomTextField } from "../customComponents/TextField";
+import CustomButton from "../customComponents/CustomButton";
+import http from "@/config/http";
+import { useRouter } from "next/router";
 
 const AddUser = () => {
+const router = useRouter();
+
+
+  const [formFields, setFormFields] = useState({
+    firstName: "",
+    otherNames: "",
+    lastName: "",
+    email: "",
+    recoveryEmail: "",
+    role: "",
+    password: "",
+    registrationStatus: "",
+  });
+
+  console.log("Form", formFields);
+
+  const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+    setFormFields((prevProps) => ({
+      ...prevProps,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async () => {
+    await http
+      .post("/v1/users", formFields)
+      .then((res) => {
+        console.log("User Reigstration successfull", res);
+        router.push("/usermgt/userlist");
+      })
+      .catch((error) => {
+        console.log("userReg error", error);
+      });
+  };
   return (
     <Grid
       item
@@ -16,17 +54,22 @@ const AddUser = () => {
         mt: "50px",
       }}
     >
-      <Item style={{padding:'20px'}}>
+      <Item style={{ padding: "20px" }}>
         <Grid container>
           <Grid item xs={3}>
             <Typography
-              sx={{ fontSize: "13px", fontWeight: "700", color: "#000" }}
+              sx={{
+                fontSize: "13px",
+                fontWeight: "700",
+                mt: "20px",
+                color: "#000",
+              }}
             >
-              Add A New User
+              Register a new user
             </Typography>
           </Grid>
           <Grid item xs={9}>
-            <Item style={{padding:'20px'}}>
+            <Item style={{ padding: "20px" }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -40,7 +83,11 @@ const AddUser = () => {
                   >
                     First Name
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="text"
+                    name="firstName"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -54,7 +101,11 @@ const AddUser = () => {
                   >
                     Other Names
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="text"
+                    name="otherNames"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -68,7 +119,11 @@ const AddUser = () => {
                   >
                     Last Name
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="text"
+                    name="lastName"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -80,9 +135,13 @@ const AddUser = () => {
                       mb: "5px",
                     }}
                   >
-                  Email
+                    Email
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="email"
+                    name="email"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -94,9 +153,13 @@ const AddUser = () => {
                       mb: "5px",
                     }}
                   >
-                   Recovery Email
+                    Recovery Email
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="email"
+                    name="recoveryEmail"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -108,9 +171,13 @@ const AddUser = () => {
                       mb: "5px",
                     }}
                   >
-                   Role
+                    Role
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="text"
+                    name="role"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
 
                 <Grid item xs={12} lg={6}>
@@ -123,9 +190,13 @@ const AddUser = () => {
                       mb: "5px",
                     }}
                   >
-                   Password
+                    Password
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="password"
+                    name="password"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
 
                 <Grid item xs={12} lg={6}>
@@ -138,11 +209,24 @@ const AddUser = () => {
                       mb: "5px",
                     }}
                   >
-                   Registration Status
+                    Registration Status
                   </Typography>
-                  <CustomTextField />
+                  <CustomTextField
+                    type="text"
+                    name="registrationStatus"
+                    onChange={handleLoginChange}
+                  />
                 </Grid>
-                
+                <Box
+                  sx={{
+                    display: "flex",
+                    width: "200px",
+                    float: "right",
+                    m: "15px",
+                  }}
+                >
+                  <CustomButton type="submit" onClick={onSubmit} title={"Submit"} />
+                </Box>
               </Grid>
             </Item>
           </Grid>

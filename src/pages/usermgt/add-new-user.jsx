@@ -1,3 +1,4 @@
+'use client'
 import DashboardMain from "@/components/Home/DashboardMain";
 import Layout from "@/components/Layout";
 import AddUser from "@/components/user Mgt/AddUser";
