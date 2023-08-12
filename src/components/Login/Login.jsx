@@ -112,7 +112,7 @@ const Login = () => {
             Login
           </Button>
           <Typography>
-            Have No Account ?{" "}
+            Have No Account Yet?{" "}
             <span style={{ fontsize: "14px", color: "blue" }}>
               Register Here
             </span>
