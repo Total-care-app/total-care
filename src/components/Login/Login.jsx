@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import http from "@/config/http";
 import { showToastMessage } from "../Products/ProductList";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
@@ -51,6 +52,7 @@ const Login = () => {
         bgcolor: "#000",
       }}
     >
+      <ToastContainer/>
       <Box
         sx={{
           bgcolor: "#FFF",

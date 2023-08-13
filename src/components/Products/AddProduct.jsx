@@ -9,15 +9,15 @@ import { useRouter } from "next/router";
 import { showToastMessage } from "../Products/ProductList";
 import { ToastContainer } from "react-toastify";
 
-const AddStockist = () => {
+const AddProduct = () => {
   const router = useRouter();
 
   const [formFields, setFormFields] = useState({
-    userId: "",
-    businessName: "",
-    email: "",
-    phoneNumber: "",
-    blocked: "",
+    name: "",
+    price: "",
+    salesVolume: "",
+    codename: "",
+    barcode: "",
   });
 
   console.log("Form", formFields);
@@ -32,7 +32,7 @@ const AddStockist = () => {
 
   const onSubmit = async () => {
     await http
-      .post("/v1/stockists", formFields)
+      .post("/v1/products", formFields)
       .then((res) => {
         console.log("User Reigstration successfull", res);
         showToastMessage("Fetched data succesfully", "success")
@@ -71,7 +71,8 @@ const AddStockist = () => {
                 textAlign: "center",
               }}
             >
-              Register a new stockist
+              
+              Add new product
             </Typography>
           </Grid>
           <Grid item xs={12} lg={9}>
@@ -87,11 +88,11 @@ const AddStockist = () => {
                       mb: "5px",
                     }}
                   >
-                   User ID
+                  Product Name
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="userId"
+                    name="name"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -105,11 +106,11 @@ const AddStockist = () => {
                       mb: "5px",
                     }}
                   >
-                   Business Name
+                  Price
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="businessName"
+                    name="price"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -123,11 +124,11 @@ const AddStockist = () => {
                       mb: "5px",
                     }}
                   >
-                    Email
+                    Sales Volume
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="email"
+                    name="salesVolume"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -141,11 +142,11 @@ const AddStockist = () => {
                       mb: "5px",
                     }}
                   >
-                    Phone Number
+                    Code Name
                   </Typography>
                   <CustomTextField
                     type="number"
-                    name="phoneNumber"
+                    name="codename"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -161,11 +162,11 @@ const AddStockist = () => {
                       mb: "5px",
                     }}
                   >
-                   Blocked
+                   Bar Code
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="blocked"
+                    name="barcode"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -192,4 +193,4 @@ const AddStockist = () => {
   );
 };
 
-export default AddStockist;
+export default AddProduct;

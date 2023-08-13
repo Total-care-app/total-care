@@ -164,8 +164,7 @@ const ProductList = () => {
 
   // fetch stockists data
   const fetcher = async (url) => await http.get(url).then((res) => res.data);
-  const { data, error } = useSWR("/v1/stockists", fetcher);
-
+  const { data, error } = useSWR("/v1/products", fetcher);
 
 
   if (error) console.log("Data fetch error, Re-try", error);
@@ -276,15 +275,16 @@ const ProductList = () => {
           <Table sx={{ minWidth: 800 }} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell align="left">Busines Name</StyledTableCell>
-                <StyledTableCell align="left">Email</StyledTableCell>
-                <StyledTableCell align="left">Phone Number</StyledTableCell>
-                <StyledTableCell align="left">Blocked</StyledTableCell>
+                <StyledTableCell align="left">Product Name</StyledTableCell>
+                <StyledTableCell align="left">Price</StyledTableCell>
+                <StyledTableCell align="left">Sales Volume</StyledTableCell>
+                <StyledTableCell align="left">Code Name</StyledTableCell>
+                <StyledTableCell align="left">Bar Code</StyledTableCell>
                 
               </TableRow>
             </TableHead>
             <TableBody>
-              {data?.map((stockist) => (
+              {data?.map((product) => (
                 <StyledTableRow
                   key={stockist.id}
                   // onClick={() => {
