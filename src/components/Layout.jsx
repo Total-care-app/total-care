@@ -158,7 +158,12 @@ const Layout = ({ children }) => {
   const stockists = [
     { title: "Stockist List", link: "/stockists/stockist-list" },
   ];
-  const products = [{ title: "Products List", link: "/products/product-list" }];
+  const products = [
+    { title: "Products", link: "/products/product-list" },
+    { title: "Packages", link: "/products/packages" },
+    { title: "Product-Packages", link: "/products/product-packages" },
+
+];
 
   return (
     <Box sx={{ display: "flex" }}>
