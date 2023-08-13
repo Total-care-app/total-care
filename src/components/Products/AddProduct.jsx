@@ -35,15 +35,14 @@ const AddProduct = () => {
       .post("/v1/products", formFields)
       .then((res) => {
         console.log("User Reigstration successfull", res);
-        showToastMessage("Fetched data succesfully", "success")
+        showToastMessage("Fetched data succesfully", "success");
         setTimeout(() => {
-            router.push("/stockists/stockist-list")
-        }, 3000)
-
+          router.push("/stockists/stockist-list");
+        }, 3000);
       })
 
       .catch((error) => {
-        showToastMessage("Failed to create stockist", "error")
+        showToastMessage("Failed to create stockist", "error");
         console.log("userReg error", error);
       });
   };
@@ -58,7 +57,7 @@ const AddProduct = () => {
         mt: "50px",
       }}
     >
-      <ToastContainer/>
+      <ToastContainer />
       <Item style={{ padding: "20px" }}>
         <Grid container>
           <Grid item xs={12} lg={3}>
@@ -71,7 +70,6 @@ const AddProduct = () => {
                 textAlign: "center",
               }}
             >
-              
               Add new product
             </Typography>
           </Grid>
@@ -88,7 +86,7 @@ const AddProduct = () => {
                       mb: "5px",
                     }}
                   >
-                  Product Name
+                    Product Name
                   </Typography>
                   <CustomTextField
                     type="text"
@@ -106,7 +104,7 @@ const AddProduct = () => {
                       mb: "5px",
                     }}
                   >
-                  Price
+                    Price
                   </Typography>
                   <CustomTextField
                     type="text"
@@ -150,7 +148,6 @@ const AddProduct = () => {
                     onChange={handleLoginChange}
                   />
                 </Grid>
-                
 
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -162,7 +159,7 @@ const AddProduct = () => {
                       mb: "5px",
                     }}
                   >
-                   Bar Code
+                    Bar Code
                   </Typography>
                   <CustomTextField
                     type="text"
@@ -170,12 +167,16 @@ const AddProduct = () => {
                     onChange={handleLoginChange}
                   />
                 </Grid>
-                <Box
+                <Grid
+                  item
+                  xs={6}
                   sx={{
                     display: "flex",
-                    width: "200px",
                     float: "right",
-                    m: "15px",
+                    mt: "25px",
+                    alignItems: "right",
+                    alightContent: "right",
+                    justifyContent: "flex-end",
                   }}
                 >
                   <CustomButton
@@ -183,7 +184,7 @@ const AddProduct = () => {
                     onClick={onSubmit}
                     title={"Submit"}
                   />
-                </Box>
+                </Grid>
               </Grid>
             </Item>
           </Grid>
