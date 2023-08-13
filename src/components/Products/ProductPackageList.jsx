@@ -206,7 +206,7 @@ const ProductPackageList = () => {
               lineHeight: "14px",
             }}
           >
-            Products
+            Product Packages
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Paper
@@ -255,7 +255,7 @@ const ProductPackageList = () => {
             </Paper>
 
             <CustomButton
-              title="Add Product"
+              title="Add Product Package"
               onClick={() => {
                 router.push("/products/add-product-package").then((r) => true);
               }}
@@ -275,11 +275,11 @@ const ProductPackageList = () => {
           <Table sx={{ minWidth: 800 }} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell align="left">Product Name</StyledTableCell>
-                <StyledTableCell align="left">Price</StyledTableCell>
-                <StyledTableCell align="left">Sales Volume</StyledTableCell>
-                <StyledTableCell align="left">Code Name</StyledTableCell>
-                <StyledTableCell align="left">Bar Code</StyledTableCell>
+                <StyledTableCell align="left">Product ID</StyledTableCell>
+                <StyledTableCell align="left">Pacakge ID</StyledTableCell>
+                {/* <StyledTableCell align="left">Sales Volume</StyledTableCell> */}
+                {/* <StyledTableCell align="left">Code Name</StyledTableCell>
+                <StyledTableCell align="left">Bar Code</StyledTableCell> */}
                 
               </TableRow>
             </TableHead>

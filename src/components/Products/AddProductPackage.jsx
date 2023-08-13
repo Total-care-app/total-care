@@ -13,11 +13,9 @@ const AddProductPackage = () => {
   const router = useRouter();
 
   const [formFields, setFormFields] = useState({
-    name: "",
-    price: "",
-    salesVolume: "",
-    codename: "",
-    barcode: "",
+    productId: "",
+    packageId: "",
+  
   });
 
   console.log("Form", formFields);
@@ -70,7 +68,7 @@ const AddProductPackage = () => {
                 textAlign: "center",
               }}
             >
-              Add new product
+              Add new product package
             </Typography>
           </Grid>
           <Grid item xs={12} lg={9}>
@@ -86,11 +84,11 @@ const AddProductPackage = () => {
                       mb: "5px",
                     }}
                   >
-                    Product Name
+                    Product ID
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="name"
+                    name="productId"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -104,72 +102,18 @@ const AddProductPackage = () => {
                       mb: "5px",
                     }}
                   >
-                    Price
+                    Package ID
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="price"
+                    name="packageId"
                     onChange={handleLoginChange}
                   />
                 </Grid>
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Sales Volume
-                  </Typography>
-                  <CustomTextField
-                    type="text"
-                    name="salesVolume"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Code Name
-                  </Typography>
-                  <CustomTextField
-                    type="number"
-                    name="codename"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
-
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Bar Code
-                  </Typography>
-                  <CustomTextField
-                    type="text"
-                    name="barcode"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
+                
                 <Grid
                   item
-                  xs={6}
+                  xs={12}
                   sx={{
                     display: "flex",
                     float: "right",
