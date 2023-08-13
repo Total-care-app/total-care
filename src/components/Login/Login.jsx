@@ -5,6 +5,7 @@ import { CustomTextField } from "../customComponents/TextField";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import http from "@/config/http";
+import { showToastMessage } from "../Products/ProductList";
 
 const Login = () => {
   const router = useRouter();
@@ -29,7 +30,10 @@ const Login = () => {
       .post("/login", loginField)
       .then((res) => {
         console.log("Login successfull", res);
-        router.push('/')
+        showToastMessage("Fetched data succesfully", "success");
+        setTimeout(() => {
+          router.push("/");
+        }, 2000);
       })
       .catch((error) => {
         console.log("login error", error);

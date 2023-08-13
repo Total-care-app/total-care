@@ -21,10 +21,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRouter } from "next/router";
 import CollapsableList from "./sideNav/CollapsableList";
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-import {
-  GroupAdd,
-} from "@mui/icons-material";
+import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import { GroupAdd, StorefrontOutlined } from "@mui/icons-material";
+import StoreIcon from "@mui/icons-material/Store";
 
 const count = 76;
 const CasesCount = 99;
@@ -149,17 +148,17 @@ const Layout = ({ children }) => {
 
   // sub list items / links
   const dashboard = [];
-  const userMgtSublist = [
-    { title: "Users", link: "/usermgt/userlist" },
-  ]
+  const userMgtSublist = [{ title: "Users", link: "/usermgt/userlist" }];
+
   const myProfile = [
     { title: "User Profile", link: "/my-profile/user-profile" },
     { title: "Client/Stockist Profile", link: "/my-profile/client-profile" },
-   
-   
   ];
 
-  
+  const stockists = [
+    { title: "Stockist List", link: "/stockists/stockist-list" },
+  ];
+  const products = [{ title: "Products List", link: "/products/product-list" }];
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -301,7 +300,7 @@ const Layout = ({ children }) => {
           <List
             sx={{
               backgroundColor: "#014d4e",
-              height:'100%'
+              height: "100%",
             }}
           >
             {/* side nav */}
@@ -325,7 +324,7 @@ const Layout = ({ children }) => {
               subList={userMgtSublist}
               listIndex={1}
             />
-            
+
             <CollapsableList
               title="My Profile"
               tooltipText={"User Management"}
@@ -335,7 +334,24 @@ const Layout = ({ children }) => {
               subList={myProfile}
               listIndex={1}
             />
-           
+            <CollapsableList
+              title="Stockist Management"
+              tooltipText={"Stockists"}
+              open={open}
+              openDrawer={handleDrawerOpen}
+              icon={<StorefrontOutlined />}
+              subList={stockists}
+              listIndex={1}
+            />
+            <CollapsableList
+              title="Product Management"
+              tooltipText={"Products"}
+              open={open}
+              openDrawer={handleDrawerOpen}
+              icon={<StoreIcon />}
+              subList={products}
+              listIndex={1}
+            />
           </List>
         </Drawer>
         <Box

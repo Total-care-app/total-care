@@ -1,26 +1,22 @@
 "use client";
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Item } from "./userListTable";
+import { Item } from "../user Mgt/userListTable";
 import { CustomTextField } from "../customComponents/TextField";
 import CustomButton from "../customComponents/CustomButton";
 import http from "@/config/http";
 import { useRouter } from "next/router";
 import { showToastMessage } from "../Products/ProductList";
 
-const AddUser = () => {
-const router = useRouter();
-
+const AddStockist = () => {
+  const router = useRouter();
 
   const [formFields, setFormFields] = useState({
-    firstName: "",
-    otherNames: "",
-    lastName: "",
+    userId: "",
+    businessName: "",
     email: "",
-    recoveryEmail: "",
-    role: "",
-    password: "",
-    registrationStatus: "",
+    phoneNumber: "",
+    blocked: "",
   });
 
   console.log("Form", formFields);
@@ -35,16 +31,18 @@ const router = useRouter();
 
   const onSubmit = async () => {
     await http
-      .post("/v1/users", formFields)
+      .post("/v1/stockists", formFields)
       .then((res) => {
         console.log("User Reigstration successfull", res);
-        showToastMessage("User registered successfully", "success")
+        showToastMessage("Fetched data succesfully", "success")
         setTimeout(() => {
-          router.push("/usermgt/userlist");
-        }, 3000);
+            router.push("/stockists/stockist-list")
+        }, 3000)
+
       })
+
       .catch((error) => {
-        showToastMessage("Failed to  register user", "error")
+        showToastMessage("Failed to create stockist", "error")
         console.log("userReg error", error);
       });
   };
@@ -68,10 +66,10 @@ const router = useRouter();
                 fontWeight: "700",
                 mt: "20px",
                 color: "#000",
-                textAlign:'center'
+                textAlign: "center",
               }}
             >
-              Register a new user
+              Register a new stockist
             </Typography>
           </Grid>
           <Grid item xs={12} lg={9}>
@@ -87,11 +85,11 @@ const router = useRouter();
                       mb: "5px",
                     }}
                   >
-                    First Name
+                   User ID
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="firstName"
+                    name="userId"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -105,29 +103,11 @@ const router = useRouter();
                       mb: "5px",
                     }}
                   >
-                    Other Names
+                   Business Name
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="otherNames"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Last Name
-                  </Typography>
-                  <CustomTextField
-                    type="text"
-                    name="lastName"
+                    name="businessName"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -144,7 +124,7 @@ const router = useRouter();
                     Email
                   </Typography>
                   <CustomTextField
-                    type="email"
+                    type="text"
                     name="email"
                     onChange={handleLoginChange}
                   />
@@ -159,32 +139,15 @@ const router = useRouter();
                       mb: "5px",
                     }}
                   >
-                    Recovery Email
+                    Phone Number
                   </Typography>
                   <CustomTextField
-                    type="email"
-                    name="recoveryEmail"
+                    type="number"
+                    name="phoneNumber"
                     onChange={handleLoginChange}
                   />
                 </Grid>
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Role
-                  </Typography>
-                  <CustomTextField
-                    type="text"
-                    name="role"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
+                
 
                 <Grid item xs={12} lg={6}>
                   <Typography
@@ -196,30 +159,11 @@ const router = useRouter();
                       mb: "5px",
                     }}
                   >
-                    Password
-                  </Typography>
-                  <CustomTextField
-                    type="password"
-                    name="password"
-                    onChange={handleLoginChange}
-                  />
-                </Grid>
-
-                <Grid item xs={12} lg={6}>
-                  <Typography
-                    sx={{
-                      fontSize: "12px",
-                      fontWeight: "200",
-                      color: "#000",
-                      textAlign: "left",
-                      mb: "5px",
-                    }}
-                  >
-                    Registration Status
+                   Blocked
                   </Typography>
                   <CustomTextField
                     type="text"
-                    name="registrationStatus"
+                    name="blocked"
                     onChange={handleLoginChange}
                   />
                 </Grid>
@@ -231,7 +175,11 @@ const router = useRouter();
                     m: "15px",
                   }}
                 >
-                  <CustomButton type="submit" onClick={onSubmit} title={"Submit"} />
+                  <CustomButton
+                    type="submit"
+                    onClick={onSubmit}
+                    title={"Submit"}
+                  />
                 </Box>
               </Grid>
             </Item>
@@ -242,4 +190,4 @@ const router = useRouter();
   );
 };
 
-export default AddUser;
+export default AddStockist;
